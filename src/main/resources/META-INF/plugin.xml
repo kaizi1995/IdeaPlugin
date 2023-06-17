@@ -1,0 +1,47 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- 插件id -->
+    <id>CodeCheck.KingFirstPlugin.Id</id>
+
+    <!-- 插件名称 -->
+
+    <name>KingFirstPlugin</name>
+
+    <version>1.0</version>
+
+    <!-- 作者信息. -->
+    <vendor email="1091032562@qq.com" url="https://www.baidu.com">king.jin</vendor>
+
+    <!-- 插件描述 -->
+    <description><![CDATA[ king  first idea plugin ha ha ha ha ha ha ha ha ]]></description>
+
+
+    <!--相关依赖-->
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+
+
+    <!-- 拓展信息 -->
+    <extensions defaultExtensionNs="com.intellij">
+
+        <localInspection language="JAVA"
+                         bundle="messages.InspectionBundle"
+                         key="inspection.comparing.string.references.display.name"
+                         groupPath="Java"
+                         groupBundle="messages.InspectionsBundle"
+                         groupKey="group.names.probable.bugs"
+                         enabledByDefault="true"
+                         level="ERROR"
+                         implementationClass="com.example.kingfirstplugin.FastJsonRule"/>
+    </extensions>
+
+    <!--菜单动作-->
+    <actions>
+        <action id="JavaCodeCheckActionId" class="com.example.kingfirstplugin.JavaCodeCheckAction" text="代码检测"
+                description="JAVA CODE CHECK TOOL">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift meta C"/>
+        </action>
+    </actions>
+</idea-plugin>
